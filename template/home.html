@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Heart Disease Prediction</title>
+        <style>
+           body {
+                    background-image: url('static/image/image3.jpg');
+                    background-repeat: no-repeat;
+                    background-size: 1420px 600px;
+                    
+                 }   
+
+                 h {
+                      padding: 60px;
+                      text-align: center;
+                       
+                        color: yellow;
+                         font-size: 40px;
+                    }  
+                    label {
+                       color: white;
+                       margin-right: 90px
+                       width:100px;
+                       
+                         }  
+                         input{
+                         	width:25%;
+                         	margin:5px 75px;
+                         }
+                         .button {
+  border: none;
+  
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 180px;
+  cursor: pointer;
+}
+div{
+	color:red;
+
+}
+                       
+                         
+
+         </style>
+		
+	</head>
+	<body>
+	
+
+		
+		<h>Heart Disease Predictor</h>
+		<div>
+			<form action="{{url_for('predict')}}" method="POST">
+	    
+             <label for="age">Age :</label>
+          
+           <input type="text" id="age" name="age" placeholder="enter age"><br>
+          
+           <label for="sex">Sex  :</label>
+          
+           <input type="text" id="sex" name="sex" placeholder="male=1; female=0"><br>
+
+           <label for="cp">cp:</label>
+          
+           <input type="text" id="cp" name="cp" placeholder=" chest pain type 0-3"><br>
+
+           <label for="trestbps">bp:</label>
+          
+           <input type="text" id="trestbps" name="trestbps" placeholder="resting blood presure"><br>
+           <label for="chol">chol:</label>
+          
+           <input type="text" id="chol" name="chol" placeholder="serum cholesterol in mg/dl"><br>
+           <label for="fbs">fbs:</label>
+          
+           <input type="text" id="fbs" name="fbs" placeholder="fasting blood suger; 1=true;0=false"><br>
+           <label for="restecg">restecg:</label>
+          
+           <input type="text" id="restecg" name="restecg" placeholder="resting electrocardiographic results(0-2)"><br>
+           <label for="thalach">thalach:</label>
+          
+           <input type="text" id="thalach" name="thalach" placeholder="maximum heart rate achieved"><br>
+           <label for="exang">exang:</label>
+          
+           <input type="text" id="exang" name="exang" placeholder="exercise induced angina (1 = yes; 0 = no)"><br>
+           <label for="oldpeak">oldpeak:</label>
+          
+           <input type="text" id="oldpeak" name="oldpeak" placeholder="ST depression induced by exercise relative to rest"><br>
+           <label for="slope">slope:</label>
+          
+           <input type="text" id="slope" name="slope" placeholder="the slope of the peak exercise ST segment(0-2)"><br>
+           <label for="ca">ca:</label>
+          
+           <input type="text" id="ca" name="ca" placeholder="text of major vessels (0-4) colored by flourosopy"><br>
+           <label for="thal">thal:</label>
+          
+           <input type="text" id="thal" name="thal" placeholder="0-3"><br>
+           <button class="button button">Predict</button><br>
+       </form>
+
+          
+         {{prediction_text}}
+ 
+	     </div>
+	</body>
+</html>
